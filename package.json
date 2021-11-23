@@ -7,7 +7,9 @@
     "dev": "nodemon server.ts",
     "build": "tsc",
     "start": "tsc && node dist/server",
-    "tsc:init": "tsc --init"
+    "tsc:init": "tsc --init",
+    "knex": "knex migrate:make '' --cwd database/",
+    "clg": "echo \"Hello $npm_config_first $npm_config_last\""
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
