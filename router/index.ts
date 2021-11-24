@@ -10,8 +10,9 @@ Router.get("/", (req, res) => {
 });
 
 Router.get("/users", UserController.index);
+Router.get("/users/create", UserController.create);
 Router.get("/todos", TodoController.index);
 Router.get("/todos/create", TodoController.create)
-Router.get("/todos/:id/show", TodoController.show)
+Router.get("/todos/:id/show", TodoController.show, )
 
 export default Router;

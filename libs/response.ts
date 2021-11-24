@@ -2,7 +2,7 @@ import {Response} from "express";
 
 export default class JsonResponse {
 
-  static success(res: Response, code : number, data : any, message? :string):void {
+  static success(res: Response, code : number, data? : any, message? :string):void {
     switch (code) {
         case 200:
             res.status(code).json({
@@ -22,7 +22,7 @@ export default class JsonResponse {
     }
   }
 
-  static error(res: Response, code:number):void {
+  static error(res: Response, code:number, message?: string):void {
     switch(code) {
         case 404:
             res.status(404).json({
@@ -31,9 +31,9 @@ export default class JsonResponse {
               });
         break;
         default: 
-        res.status(500).json({
-            code: 500,
-            message: "Internal server error",
+        res.status(code).json({
+            code,
+            message
         });
     }
   }

@@ -1,6 +1,6 @@
 import Knex from "knex";
 
-const Database = Knex({
+const DB = Knex({
     client: 'mysql',
     connection: {
       host : '127.0.0.1',
@@ -12,4 +12,4 @@ const Database = Knex({
 });
 
 
-export default Database
+export default DB
